@@ -1,0 +1,31 @@
+{% extends "book/base.html" %}
+{% block content %}
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+  <a href="{% url 'main' %}">На главную </a>
+<h1>Все книги</h1>
+<ul>
+{% for b in books %}
+    <li>
+       <h2>{{b.title}}| {{b.category.get_name}}</h2>
+        <p>{{b.author}}</p>
+        <a href="{{b.get_absolute_url}}" class="button">Подробней</a>
+        <hr>
+
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

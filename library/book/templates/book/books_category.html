@@ -1,0 +1,9 @@
+{% extends "book/base.html" %}
+{% block content %}
+<ul>
+{% for c in category %}
+    <li><a href="{%url 'books' %}?cat={{c.pk}}">{{c.title}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

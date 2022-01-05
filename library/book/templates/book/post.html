@@ -1,0 +1,16 @@
+{% extends "book/base.html" %}
+{% block content %}
+<ul>
+{% for b in book %}
+    <li>
+       <h2>Название: <br> {{b.title}}</h2><br>
+       <h2>Жанр: <br>{{b.category.get_name}}</h2><br>
+       <h2>Автор: <br>{{b.author}}</h2><br>
+       <h2>Год: <br>{{b.year_book}}</h2><br>
+       <h2>Описание: <br>{{b.description}}</h2><br>
+       <a href="{{b.get_sale}}">Арендовать книгу</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

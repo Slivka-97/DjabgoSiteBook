@@ -10,9 +10,10 @@ urlpatterns = [
     path('post/<str:post_name>/', post, name="post"),
     path('category/', category, name='category'),
     path('about/', about, name='about'),
-    path('login/', login, name='login'),
+    path('login/', loginForm, name='login'),
     path('registration/', registration, name='registration'),
     path('sale/<str:book_name>', sale, name='sale'),
+    path('logOut/', logOut_user, name='logOut'),
 ]
 
 if settings.DEBUG:

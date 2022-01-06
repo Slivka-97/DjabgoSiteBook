@@ -1,9 +1,22 @@
 {% extends "book/base.html" %}
 {% block content %}
-<ul>
+  <style>
+   .ul {
+    list-style: none;
+   }
+  </style>
+<ul class="ul">
 {% for i in main_menu %}
     <li><a href="{% url i.url_name %}">{{i.title}}</a></li>
 {% endfor %}
+     {% if request.user.is_authenticated %}
+    <li class="li"> {{request.user.username}} <br>
+        <a href="{% url 'logOut'%}" class="button">Выйти</a></li>
+    {% else %}
+    <li class="li"><a href="{% url 'registration' %}" class="button">Регистрация</a> <br>
+        <a href="{% url 'login'%}" class="button">Войти</a>
+    </li>
+    {% endif %}
 </ul>
 
 {% endblock %}

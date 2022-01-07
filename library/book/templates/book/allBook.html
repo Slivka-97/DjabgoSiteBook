@@ -19,7 +19,7 @@
 <ul>
 {% for b in books %}
     <li>
-       <h2>{{b.title}}| {{b.category.get_name}}</h2>
+       <h2>{{b.title}}| {{b.category}}</h2>
         <p>{{b.author}}</p>
         <a href="{{b.get_absolute_url}}" class="button">Подробней</a>
         <hr>
